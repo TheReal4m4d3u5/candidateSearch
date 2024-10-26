@@ -7,11 +7,11 @@ export interface Candidate {
     avatar_url: string;
     login: string;
     html_url: string;
-    bio?: string;             // Optional
-    location?: string;        // Optional
-    followersCount?: number;  // Optional
-    publicReposCount?: number; // Optional
-    company?: string;         // Optional
-    blog?: string;            // Optional
-    email?: string;           // Optional
+    bio?: string;             
+    location: string;        
+    followersCount?: number;  
+    publicReposCount?: number; 
+    company?: string;         
+    blog?: string;            
+    email: string;           
   }

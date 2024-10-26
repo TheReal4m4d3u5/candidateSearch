@@ -1,5 +1,6 @@
 import { Candidate } from '../interfaces/Candidate.interface';
 
+
 const searchGithub = async (): Promise<Candidate[]> => {
 
   try {
@@ -19,7 +20,9 @@ const searchGithub = async (): Promise<Candidate[]> => {
     if (!response.ok) {
       throw new Error('invalid API response, check the network tab');
     }
-    // console.log('Data:', data);
+    
+   
+
     return data;
   } catch (err) {
     // console.log('an error occurred', err);
@@ -29,12 +32,16 @@ const searchGithub = async (): Promise<Candidate[]> => {
 
 const searchGithubUser = async (username: string) => {
   try {
+
     const response = await fetch(`https://api.github.com/users/${username}`, {
       headers: {
         Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
       },
     });
     const data = await response.json();
+
+    console.log('data comming back from searchGithubUser', data);
+
     if (!response.ok) {
       throw new Error('invalid API response, check the network tab');
     }

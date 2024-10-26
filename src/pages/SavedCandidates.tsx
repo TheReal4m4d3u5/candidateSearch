@@ -29,8 +29,13 @@ const SavedCandidates: React.FC = () => {
     name: 'John Doe',
     username: 'johndoe',
     avatar_url: 'https://example.com/avatar.jpg', // Placeholder URL
-    login: '',
-    html_url:'',
+    login: 'strig',
+    html_url:'strig',
+    email:'strig',
+    bio: 'strig',             
+    location: 'strig',        
+    company: '',                
+
 
     // Include other properties that match your Candidate interface
   };
