@@ -4,10 +4,14 @@ import Nav from './components/Nav';
 function App() {
   return (
     <>
-      <Nav />
-      <main>
-        <Outlet />
+      <Nav /> {/* Render the navigation component */}
+      <main  style={{ padding: '2em', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Outlet /> {/* This is where the matched child route will be rendered */}
       </main>
+      <footer>
+        {/* Add footer content if needed */}
+        {/* <p>&copy; {new Date().getFullYear()} Your Company</p> */}
+      </footer>
     </>
   );
 }
