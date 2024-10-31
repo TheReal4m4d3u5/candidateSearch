@@ -27,7 +27,7 @@ const SavedCandidates: React.FC = () => {
         {savedCandidates.map(candidate => (
           <div className="savedCandidate">
             <figure>
-              <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="candidate-avatar" />
+              <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="savedCandidateAvatar" />
             </figure>
             <article className="savedCandidateDetails">
               <p className="candidate-name">
