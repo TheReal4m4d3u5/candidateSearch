@@ -1,16 +1,15 @@
 import React from 'react';
 import { Candidate } from '../interfaces/Candidate.interface.ts'; // Adjust the path as needed
-import { ImCross } from 'react-icons/im';
-import { CgPlayListAdd } from 'react-icons/cg';
+
 
 interface CandidateCardProps {
   candidate: Candidate;
-  addToCanidateList: () => void;
-  removeFromCanidates?: () => void;
-  onCandidateList: boolean;
+  addToCanidateList: () => void | undefined;
+  removeFromCanidates: () => void | undefined;
 }
 
-const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, addToCanidateList, removeFromCanidates, onCandidateList }) => {
+
+const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, addToCanidateList, removeFromCanidates }) => {
   return (
     <div className="candidate-card">
       <figure>
@@ -27,29 +26,10 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, addToCanidateL
         {candidate.bio && <p>Bio: {candidate.bio}</p>}
       </article>
 
-      {/* //This add's or removes a candidate */}
-      <div className="candidate-actions">
-        {onCandidateList ? (
-          <aside className='icons'>
-            <ImCross
-              style={{ fontSize: '40px', cursor: 'pointer' }}
-              onClick={removeFromCanidates}  // Use removeFromStorage here if available
-            />
-          </aside>
-        ) : (
-          <aside className='icons'>
-            <CgPlayListAdd
-              style={{ fontSize: '50px', cursor: 'pointer' }}
-              onClick={addToCanidateList}
-            />
-          </aside>
-        )}
-
-        <button className="remove">-</button>
-        <button className="add">+</button>
-        
-      </div>
+      <button onClick={()=>removeFromCanidates()} className="remove">-</button>
+      <button onClick={()=>addToCanidateList()} className="add">+</button>
     </div>
+
   );
 };
 

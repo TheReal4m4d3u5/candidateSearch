@@ -1,52 +1,10 @@
 import ReactDOM from 'react-dom/client';
-import { Outlet, createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider} from 'react-router-dom';
 import './index.css';
-
+import App from './App';
 import CandidateSearch from './pages/CandidateSearch';
 import SavedCandidates from './pages/SavedCandidates';
 import ErrorPage from './pages/ErrorPage';
-
-// App Component defined here
-function App() {
-  return (
-
-
-
-
-
-    <div>
-
-      <div >
-        <nav style={{
-          display: 'flex',
-          alignItems: 'center',
-          padding: '1rem',
-          fontSize: '1.2rem'
-        }}>
-          <Link to="/" style={{ marginRight: '1rem', textDecoration: 'none', color: 'white' }}>Home</Link>
-          <Link to="/savedcandidates" style={{ textDecoration: 'none', color: 'white' }}>Potential Candidates</Link>
-        </nav>
-      </div>
-
-
-      <div>
-        <h1 style={{
-          textAlign: 'center',
-          color: 'white',
-          fontSize: '2.5rem',
-          fontWeight: 'bold',
-          marginTop: '2rem'
-        }}>
-          Candidate Search
-        </h1>
-
-        <Outlet />
-      </div>
-    </div>
-
-
-  );
-}
 
 const router = createBrowserRouter([
   {
@@ -59,7 +17,7 @@ const router = createBrowserRouter([
         element: <CandidateSearch />,
       },
       {
-        path: 'savedcandidates', // updated to lowercase for consistency
+        path: '/saved', // updated to lowercase for consistency
         element: <SavedCandidates />,
       },
     ],

@@ -5,53 +5,40 @@ const SavedCandidates: React.FC = () => {
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
 
   useEffect(() => {
-    const storedCandidates = localStorage.getItem('savedCandidates');
+    const storedCandidates = localStorage.getItem('user');
     if (storedCandidates) {
       setSavedCandidates(JSON.parse(storedCandidates));
     }
+
   }, []);
 
-  const handleSaveCandidate = (candidate: Candidate) => {
-    const updatedCandidates = [...savedCandidates, candidate];
-    setSavedCandidates(updatedCandidates);
-    localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
-  };
-
-  const handleRemoveCandidate = (id: string) => {
+  const removeFromCanidates = (id: string) => {
     const updatedCandidates = savedCandidates.filter(c => c.id !== id);
     setSavedCandidates(updatedCandidates);
     localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
   };
 
   // Adding a sample candidate to demonstrate the save functionality
-  const sampleCandidate: Candidate = {
-    id: '12345',
-    name: 'John Doe',
-    username: 'johndoe',
-    avatar_url: 'https://example.com/avatar.jpg', // Placeholder URL
-    login: 'strig',
-    html_url:'strig',
-    email:'strig',
-    bio: 'strig',             
-    location: 'strig',        
-    company: '',                
-
-
-    // Include other properties that match your Candidate interface
-  };
-
   return (
     <div>
-      <h2>Saved Candidates</h2>
-      <button onClick={() => handleSaveCandidate(sampleCandidate)}>
-        Save Sample Candidate
-      </button>
       <ul>
         {savedCandidates.map(candidate => (
-          <li key={candidate.id}>
-            {candidate.name} 
-            <button onClick={() => handleRemoveCandidate(candidate.id)}>Remove</button>
-          </li>
+          <div className="candidate-card">
+            <figure>
+              <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="candidate-avatar" />
+            </figure>
+            <article className="candidate-details">
+              <p className="candidate-name">
+                <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
+                  {candidate.login}
+                </a>
+              </p>
+              {candidate.location && <p>Location: {candidate.location}</p>}
+              {candidate.company && <p>Company: {candidate.company}</p>}
+              {candidate.bio && <p>Bio: {candidate.bio}</p>}
+            </article>
+            <button onClick={()=>removeFromCanidates(candidate.id)} className="remove">-</button>
+          </div>
         ))}
       </ul>
     </div>
