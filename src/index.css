@@ -131,3 +131,8 @@ tbody tr:nth-child(odd) {
   justify-content: space-evenly;
   margin-top: 50px;
 }
+
+.candidateImage{
+  display: flex;
+  justify-content: center;
+}

@@ -46,3 +46,24 @@
     color: white;
     text-decoration: none;
   }
+
+  .savedCandidate{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .savedCandidateDetails{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    min-width: 500px;
+  }
+
+  .savedRemove{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    
+  }

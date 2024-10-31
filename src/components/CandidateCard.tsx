@@ -8,11 +8,10 @@ interface CandidateCardProps {
   removeFromCanidates: () => void | undefined;
 }
 
-
 const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, addToCanidateList, removeFromCanidates }) => {
   return (
     <div className="candidate-card">
-      <figure>
+      <figure className='candidateImage'>
         <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="candidate-avatar" />
       </figure>
       <article className="candidate-details">

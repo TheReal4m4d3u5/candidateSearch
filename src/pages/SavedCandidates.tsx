@@ -12,6 +12,8 @@ const SavedCandidates: React.FC = () => {
 
   }, []);
 
+
+  //this is not working to remove from local storage
   const removeFromCanidates = (id: string) => {
     const updatedCandidates = savedCandidates.filter(c => c.id !== id);
     setSavedCandidates(updatedCandidates);
@@ -23,11 +25,11 @@ const SavedCandidates: React.FC = () => {
     <div>
       <ul>
         {savedCandidates.map(candidate => (
-          <div className="candidate-card">
+          <div className="savedCandidate">
             <figure>
               <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="candidate-avatar" />
             </figure>
-            <article className="candidate-details">
+            <article className="savedCandidateDetails">
               <p className="candidate-name">
                 <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
                   {candidate.login}
@@ -37,7 +39,7 @@ const SavedCandidates: React.FC = () => {
               {candidate.company && <p>Company: {candidate.company}</p>}
               {candidate.bio && <p>Bio: {candidate.bio}</p>}
             </article>
-            <button onClick={()=>removeFromCanidates(candidate.id)} className="remove">-</button>
+            <button onClick={()=>removeFromCanidates(candidate.id)} className="savedRemove">-</button>
           </div>
         ))}
       </ul>
