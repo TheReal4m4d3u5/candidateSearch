@@ -25,9 +25,10 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, addToCanidateL
         {candidate.company && <p>Company: {candidate.company}</p>}
         {candidate.bio && <p>Bio: {candidate.bio}</p>}
       </article>
-
-      <button onClick={()=>removeFromCanidates()} className="remove">-</button>
-      <button onClick={()=>addToCanidateList()} className="add">+</button>
+      <section className='candidateButtons'>
+        <button onClick={() => removeFromCanidates()} className="remove">-</button>
+        <button onClick={() => addToCanidateList()} className="add">+</button>
+      </section>
     </div>
 
   );

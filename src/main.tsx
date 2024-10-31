@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <CandidateSearch />,
       },
       {
-        path: '/saved', // updated to lowercase for consistency
+        path: 'saved', // updated to lowercase for consistency
         element: <SavedCandidates />,
       },
     ],

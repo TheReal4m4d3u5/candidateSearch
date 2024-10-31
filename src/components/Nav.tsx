@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'; // react-router-dom for routing
 const Nav: React.FC = () => {
 
   const navItems = [
-    { name: 'Search', path: '/search' },
+    { name: 'Home', path: '/' },
     { name: 'Saved Candidates', path: '/saved' },
   ];
 

@@ -23,8 +23,6 @@ const searchGithub = async (): Promise<Candidate[]> => {
       throw new Error('invalid API response, check the network tab');
     }
     
-   
-
     return data;
   } catch (err) {
     // console.log('an error occurred', err);

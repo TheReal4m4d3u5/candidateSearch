@@ -98,6 +98,7 @@ tbody tr:nth-child(odd) {
   display: flex;
   justify-content: flex-start;
   padding: 1em 2em;
+  width: 100vw;
 }
 
 .nav-item {
@@ -117,4 +118,16 @@ tbody tr:nth-child(odd) {
 .table {
   width: 80vw;
   table-layout: fixed;
+}
+
+.candidate-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.candidateButtons{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
