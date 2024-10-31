@@ -17,7 +17,7 @@ const SavedCandidates: React.FC = () => {
   const removeFromCanidates = (id: string) => {
     const updatedCandidates = savedCandidates.filter(c => c.id !== id);
     setSavedCandidates(updatedCandidates);
-    localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
+    localStorage.setItem('user', JSON.stringify(updatedCandidates));
   };
 
   // Adding a sample candidate to demonstrate the save functionality
@@ -25,7 +25,7 @@ const SavedCandidates: React.FC = () => {
     <div>
       <ul>
         {savedCandidates.map(candidate => (
-          <div className="savedCandidate">
+          <div className="savedCandidate" key={candidate.login}>
             <figure>
               <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="savedCandidateAvatar" />
             </figure>
@@ -39,7 +39,9 @@ const SavedCandidates: React.FC = () => {
               {candidate.company && <p>Company: {candidate.company}</p>}
               {candidate.bio && <p>Bio: {candidate.bio}</p>}
             </article>
-            <button onClick={()=>removeFromCanidates(candidate.id)} className="savedRemove">-</button>
+            <section className="savedRemove">
+              <button onClick={() => removeFromCanidates(candidate.id)} >-</button>
+            </section>
           </div>
         ))}
       </ul>

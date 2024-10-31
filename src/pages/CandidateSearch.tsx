@@ -52,8 +52,7 @@ const CandidateSearch: React.FC = () => {
 
     let username: Candidate[] = [];
 
-   
-
+  
     let getData: string | null = localStorage.getItem('user') || null;
 
     console.log("getData");
@@ -65,7 +64,6 @@ const CandidateSearch: React.FC = () => {
     if (getData !== null) {
       username = JSON.parse(getData);
     }
-
     
 
     username.push(candidates[candidateIndex]);
