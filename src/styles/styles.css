@@ -52,15 +52,18 @@
 
 .savedCandidate {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
-  margin-bottom: 50px;
+  margin-bottom: 1px;
+  min-width: 100vw;
+  margin-top: 0px;
 }
 
 .savedCandidateDetails {
   display: flex;
   justify-content: center;
-  background-color: black;
+
   min-width: 500px;
 }
 
@@ -69,23 +72,28 @@
   flex-direction: column;
   height: 100%;
   margin-left: 20px;
-  
-  justify-content: center;
-  background-color: red;
+  margin-top: 30px;
+
 }
 
 .remove {
+  display: flex;
+  justify-content: center;
   background-color: red;
   height: 100px;
   width: 100px;
   border-radius: 50%;
+  font-size: 40px;
 }
 
 .add {
+  display: flex;
+  justify-content: center;
   background-color: green;
   height: 100px;
   width: 100px;
   border-radius: 50%;
+  font-size: 40px;
 }
 
 .candidate-card {
@@ -96,4 +104,156 @@
 .savedCandidateAvatar{
   border-radius: 50%;
   max-width: 75px;
+  background-color: black;
+}
+
+.saved-candidate-name{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  background-color: black;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.saved-candidate-location{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  background-color: black;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.saved-candidate-company{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  background-color: black;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.saved-candidate-bio{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  background-color: black;
+  padding: 20px;
+  margin-top: 0;
+}
+
+.savedCandidatAvatar{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-right: 5px;
+  margin-top: 0;
+}
+
+.saved-candidate-email{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+}
+
+
+.header{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+ 
+}
+
+
+.pcHeader{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+ 
+}
+
+.headerImage{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+  margin-left: 75px;
+}
+
+.headerName{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+}
+
+.headerLocaton{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+}
+
+.headerEmail{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+}
+
+.headerCompany{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+}
+
+.headerBio{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+}
+
+.headerReject{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+}
+
+
+
+
+.header {
+  padding: 8px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border: 1px solid #333;
 }

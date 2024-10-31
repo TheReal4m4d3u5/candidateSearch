@@ -31,12 +31,8 @@ const CandidateSearch: React.FC = () => {
           })
         );
 
-        console.log('Fetched detailed candidate data:', detailedCandidates); // Log to verify structure of detailed data
-
         // Set candidates with detailed data
         setCandidates(detailedCandidates);
-
-
 
       } catch (err) {
         console.error('Failed to fetch candidates:', err);
@@ -64,7 +60,7 @@ const CandidateSearch: React.FC = () => {
     if (getData !== null) {
       username = JSON.parse(getData);
     }
-    
+
 
     username.push(candidates[candidateIndex]);
     localStorage.setItem('user', JSON.stringify(username));

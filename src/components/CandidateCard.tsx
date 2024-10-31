@@ -8,21 +8,66 @@ interface CandidateCardProps {
   removeFromCanidates: () => void | undefined;
 }
 
+
+
+
+
+
 const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, addToCanidateList, removeFromCanidates }) => {
+
+  console.log("candidate location")
+  console.log(candidate.location)
+
+  console.log("candidate company")
+  console.log(candidate.company)
+
+  console.log("candidate bio")
+  console.log(candidate.bio)
+
   return (
     <div className="candidate-card">
-      <figure className='candidateImage'>
-        <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="candidate-avatar" />
+      <figure className='candidateImage'>{
+
+        candidate.avatar_url ? (
+          <img
+            src={candidate.avatar_url}
+            alt={candidate.login ? `${candidate.login}'s Avatar` : "User's Avatar"}
+            className="candidate-avatar"
+          />
+        ) : (
+          <p>Avatar not available</p>
+        )
+      }
       </figure>
       <article className="candidate-details">
+
+        <figcaption>
+          {candidate.login ? candidate.login : "User login not available"}
+        </figcaption>
+
         <p className="candidate-name">
-          <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
-            {candidate.login}
-          </a>
+          {candidate.login ? (
+            <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
+              {candidate.login}
+            </a>
+          ) : (
+            "Username not available"
+          )}
+        </p>        
+
+        <p>
+          {candidate.location ? candidate.location : "User location not available"}
         </p>
-        {candidate.location && <p>Location: {candidate.location}</p>}
-        {candidate.company && <p>Company: {candidate.company}</p>}
-        {candidate.bio && <p>Bio: {candidate.bio}</p>}
+
+        <p>
+          {candidate.company ? candidate.company : "User company not available"}
+        </p>
+
+        <p>
+          {candidate.bio ? candidate.bio : "User location not available"}
+        </p>
+
+
       </article>
       <section className='candidateButtons'>
         <button onClick={() => removeFromCanidates()} className="remove">-</button>

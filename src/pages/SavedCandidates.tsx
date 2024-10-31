@@ -12,7 +12,6 @@ const SavedCandidates: React.FC = () => {
 
   }, []);
 
-
   //this is not working to remove from local storage
   const removeFromCanidates = (id: string) => {
     const updatedCandidates = savedCandidates.filter(c => c.id !== id);
@@ -22,29 +21,66 @@ const SavedCandidates: React.FC = () => {
 
   // Adding a sample candidate to demonstrate the save functionality
   return (
+
     <div>
-      <ul>
-        {savedCandidates.map(candidate => (
-          <div className="savedCandidate" key={candidate.login}>
-            <figure>
-              <img src={candidate.avatar_url} alt={`${candidate.login}'s Avatar`} className="savedCandidateAvatar" />
-            </figure>
-            <article className="savedCandidateDetails">
-              <p className="candidate-name">
-                <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
-                  {candidate.login}
-                </a>
-              </p>
-              {candidate.location && <p>Location: {candidate.location}</p>}
-              {candidate.company && <p>Company: {candidate.company}</p>}
-              {candidate.bio && <p>Bio: {candidate.bio}</p>}
-            </article>
-            <section className="savedRemove">
-              <button onClick={() => removeFromCanidates(candidate.id)} >-</button>
-            </section>
-          </div>
-        ))}
-      </ul>
+      <div className='pcHeader'>Potential Candidates</div>
+      <table>
+        <tbody>
+          <thead>
+            <tr className='header'>
+              <th className='headerImage'>Image</th>
+              <th className='headerName'>Name</th>
+              <th className='headerLocaton'>Location</th>
+              <th className='headerEmail'>Email</th>
+              <th className='headerCompany'>Company</th>
+              <th className='headerBio'>Bio</th>
+              <th className='headerReject'>Reject</th>
+            </tr>
+          </thead>
+
+          {savedCandidates.map(candidate => (
+            <div className="savedCandidate" key={candidate.login}>
+              <figure className="savedCandidatAvatar">{
+
+                candidate.avatar_url ? (
+                  <img
+                    src={candidate.avatar_url}
+                    alt={candidate.login ? `${candidate.login}'s Avatar` : "User's Avatar"}
+                    className="savedCandidateAvatar"
+                  />
+                ) : (
+                  <p>Avatar not available</p>
+                )
+              }
+
+              </figure>
+              <article className="savedCandidateDetails">
+
+
+                <p className="saved-candidate-name">
+                  {candidate.name ? candidate.name : "User name not available"}
+                </p>
+                <p className="saved-candidate-location">
+                  {candidate.location ? candidate.location : "User location not available"}
+                </p>
+                <p className="saved-candidate-email">
+                  {candidate.email ? candidate.email : "User email not available"}
+                </p>
+                <p className="saved-candidate-company">
+                  {candidate.company ? candidate.company : "User company not available"}
+                </p>
+                <p className="saved-candidate-bio">
+                  {candidate.bio ? candidate.bio : "User location not available"}
+                </p>
+              </article>
+              <section className="savedRemove">
+                <button onClick={() => removeFromCanidates(candidate.id)}  >-</button>
+              </section>
+
+            </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
