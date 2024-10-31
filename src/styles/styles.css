@@ -58,6 +58,7 @@
   margin-bottom: 1px;
   min-width: 100vw;
   margin-top: 0px;
+  justify-content: space-evenly;
 }
 
 .savedCandidateDetails {
@@ -170,7 +171,7 @@
   margin-right: 5px;
   margin-top: 0;
   padding: 15px;
- 
+ background-color: none;
 }
 
 
@@ -191,6 +192,8 @@
   margin-top: 0;
   padding: 15px;
   margin-left: 75px;
+  justify-content: center;
+
 }
 
 .headerName{
@@ -251,9 +254,10 @@
 
 
 .header {
-  padding: 8px;
-  background-color: #333;
+  
+
   color: white;
   text-align: center;
-  border: 1px solid #333;
+width: 100vw;
+justify-content: space-evenly;
 }
