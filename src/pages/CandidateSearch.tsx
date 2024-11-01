@@ -20,7 +20,7 @@ const CandidateSearch: React.FC = () => {
     const fetchCandidates = async () => {
       try {
         const allCandidates = await searchGithub(); // Fetch candidates using the initial API function
-        console.log('Fetch for all candidate data:', allCandidates);
+
 
         // Fetch detailed data for each candidate
         const detailedCandidates = await Promise.all(
@@ -51,11 +51,7 @@ const CandidateSearch: React.FC = () => {
   
     let getData: string | null = localStorage.getItem('user') || null;
 
-    // console.log("getData");
-    // console.log(getData);
 
-    // console.log("username");
-    // console.log(username);
 
     if (getData !== null) {
       username = JSON.parse(getData);

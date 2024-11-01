@@ -15,14 +15,6 @@ interface CandidateCardProps {
 
 const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, addToCanidateList, removeFromCanidates }) => {
 
-  console.log("candidate location")
-  console.log(candidate.location)
-
-  console.log("candidate company")
-  console.log(candidate.company)
-
-  console.log("candidate bio")
-  console.log(candidate.bio)
 
   return (
     <div className="candidate-card">
