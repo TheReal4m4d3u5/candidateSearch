@@ -51,11 +51,11 @@ const CandidateSearch: React.FC = () => {
   
     let getData: string | null = localStorage.getItem('user') || null;
 
-    console.log("getData");
-    console.log(getData);
+    // console.log("getData");
+    // console.log(getData);
 
-    console.log("username");
-    console.log(username);
+    // console.log("username");
+    // console.log(username);
 
     if (getData !== null) {
       username = JSON.parse(getData);
