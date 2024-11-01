@@ -66,6 +66,9 @@ const SavedCandidates: React.FC = () => {
                 <p className="saved-candidate-email">
                   {candidate.email ? candidate.email : "User email not available"}
                 </p>
+                <p className="saved-candidate-html_url">
+                  {candidate.html_url ? candidate.html_url : "User company not available"}
+                </p>
                 <p className="saved-candidate-company">
                   {candidate.company ? candidate.company : "User company not available"}
                 </p>

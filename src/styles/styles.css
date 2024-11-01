@@ -261,3 +261,14 @@
 width: 100vw;
 justify-content: space-evenly;
 }
+
+
+.saved-candidate-html_url{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  margin-right: 5px;
+  margin-top: 0;
+  padding: 15px;
+
+}
