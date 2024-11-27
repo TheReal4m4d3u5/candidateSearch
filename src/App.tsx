@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Nav /> {/* Render the navigation component */}
-      <main  style={{ padding: '2em', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <main  style={{ padding: '1em', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Outlet /> {/* This is where the matched child route will be rendered */}
       </main>
       <footer>

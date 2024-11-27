@@ -85,7 +85,7 @@ const CandidateSearch: React.FC = () => {
         {(candidates.length > 0 && candidates.length -1 !== candidateIndex) ? (
           <CandidateCard candidate={candidates[candidateIndex]} addToCanidateList={addToCanidateList} removeFromCanidates={removeFromCanidates}></CandidateCard>
         ) : (
-          <p>No candidates found.</p>
+          <p>No Events found.</p>
         )}
       </div>
     </div>

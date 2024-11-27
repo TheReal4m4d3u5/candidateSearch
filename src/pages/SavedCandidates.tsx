@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Candidate } from '../interfaces/Candidate.interface.ts';
+import '../styles/styles.css';
 
 const SavedCandidates: React.FC = () => {
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
@@ -24,6 +25,11 @@ const SavedCandidates: React.FC = () => {
 
     <div>
       <div className='pcHeader'>Potential Candidates</div>
+
+      {savedCandidates.length === 0 ? (
+        <p className='noSavedCandidates'>No saved candidates available.</p>
+      ) : (
+
       <table>
         <tbody>
           <thead>
@@ -37,6 +43,8 @@ const SavedCandidates: React.FC = () => {
               <th className='headerReject'>Reject</th>
             </tr>
           </thead>
+
+
 
           {savedCandidates.map(candidate => (
             <div className="savedCandidate" key={candidate.login}>
@@ -84,6 +92,7 @@ const SavedCandidates: React.FC = () => {
           ))}
         </tbody>
       </table>
+      )}
     </div>
   );
 };

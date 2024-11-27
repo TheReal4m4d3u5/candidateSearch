@@ -25,7 +25,7 @@ const searchGithub = async (): Promise<Candidate[]> => {
     
     return data;
   } catch (err) {
-    // console.log('an error occurred', err);
+     console.log('an error occurred', err);
     return [];
   }
 };
